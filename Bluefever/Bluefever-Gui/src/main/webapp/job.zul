@@ -1,0 +1,67 @@
+<zk>
+    <window id="wndJob" width="400px" height="320px" mode="modal" position="center,center" apply="com.helloingob.bluefever.JobController">
+        <borderlayout width="100%" height="100%">
+            <center border="none">
+                <vlayout hflex="true">
+                    <hbox hflex="true" align="center">
+                        <hbox pack="end" width="100px">
+                            <label value="Active" />
+                        </hbox>
+                        <checkbox id="cbxActive" checked="true" />
+                    </hbox>
+                    <hbox hflex="true" align="center">
+                        <hbox pack="end" width="100px">
+                            <label value="Thermostat" />
+                        </hbox>
+                        <combobox id="cbxThermostat" hflex="true" readonly="true" />
+                    </hbox>
+                    <hbox hflex="true" align="center">
+                        <hbox pack="end" width="100px">
+                            <label value="Temperature" />
+                        </hbox>
+                        <button id="btnLess" iconSclass="z-icon-minus" hflex="true" />
+                        <doublebox id="dbxTemperature" format="##.0" readonly="true"/>
+                        <button id="btnMore" iconSclass="z-icon-plus" hflex="true" />
+                        <button id="btnOff" iconSclass="z-icon-power-off" hflex="true" />
+                    </hbox>
+                    <separator />
+                    <hbox hflex="true" align="center">
+                        <hbox pack="end" width="100px">
+                            <label value="Execution" />
+                        </hbox>
+                        <radiogroup>
+                            <hbox hflex="true" align="center">
+                                <radio label="Regular" id="rdoRegular" checked="true" />
+                                <radio label="Specific" id="rdoSpecific" />
+                            </hbox>
+                        </radiogroup>
+                    </hbox>
+                    <hbox id="hbxDayOfWeek" hflex="true" align="center">
+                        <hbox pack="end" width="100px">
+                            <label value="Day of week" />
+                        </hbox>
+                        <combobox id="cbxDayOfWeek" hflex="true" readonly="true" />
+                    </hbox>
+                    <hbox id="hbxTime" hflex="true" align="center">
+                        <hbox pack="end" width="100px">
+                            <label value="Time" />
+                        </hbox>
+                        <timebox id="tbxTime" hflex="true" format="HH:mm" />
+                    </hbox>
+                    <hbox id="hbxDate" hflex="true" align="center" visible="false">
+                        <hbox pack="end" width="100px">
+                            <label value="Date" />
+                        </hbox>
+                        <datebox id="dbxDate" hflex="true" format="dd.MM.yyyy HH:mm" />
+                    </hbox>
+                </vlayout>
+            </center>
+            <south border="none">
+                <hbox hflex="true" pack="end">
+                    <button label="Cancel" onClick="wndJob.detach();" width="85px" />
+                    <button id="btnOk" label="Ok" width="85px" />
+                </hbox>
+            </south>
+        </borderlayout>
+    </window>
+</zk>

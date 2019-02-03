@@ -1,0 +1,81 @@
+<?link rel="shortcut icon" type="image/x-icon" href="favicon.ico"?>
+<?link rel="icon" type="image/x-icon" href="favicon.ico"?>
+<?page title="Bluefever Management Client"?>
+<zk>
+    <style>.pastNow { background-color: #E6E6E6; } div.z-listcell-content { color: inherit; }</style>
+    <borderlayout apply="com.helloingob.bluefever.IndexController">
+        <center>
+
+            <vlayout hflex="true" vflex="true">
+                <hlayout hflex="true">
+                    <hlayout id="hlDevices" hflex="true" height="100px" />
+                    <button id="btnMenu" width="100px" iconSclass="z-icon-bars" vflex="true" popup="popMenu, after_end" style="font-size: 80px;" />
+                </hlayout>
+                <separator height="30px" />
+                <hlayout height="200px">
+                    <button id="btnLess" iconSclass="z-icon-minus" hflex="true" vflex="true" style="font-size: 50px;" />
+                    <vlayout vflex="true" width="180px">
+                        <button id="btnOff" iconSclass="z-icon-power-off" height="80px" hflex="true" style="font-size: 50px;" />
+                        <doublebox id="dbxTemperature" style="font-size: 500%;" format="##.0" readonly="true" hflex="true" vflex="true" />
+                    </vlayout>
+                    <button id="btnMore" iconSclass="z-icon-plus" hflex="true" vflex="true" style="font-size: 50px;" />
+                    <separator width="30px" />
+                    <button id="btnSet" iconSclass="z-icon-send" vflex="true" width="200px" style="font-size: 50px;" />
+                </hlayout>
+                <separator height="30px" />
+                <tabbox hflex="true" vflex="true">
+                    <tabs id="tabs">
+                        <tab label="Data" />
+                        <tab label="Schedule" />
+                    </tabs>
+                    <tabpanels>
+                        <tabpanel hflex="true">
+                            <vlayout hflex="true" vflex="true">
+                                <listbox id="lbxTemperature" hflex="true" vflex="true" emptyMessage="No data found.">
+                                    <listhead>
+                                        <listheader id="lhdTemperatureDate" width="330px" label="Date" sort="auto" align="center" />
+                                        <listheader label="Current" sort="auto" align="center" />
+                                        <listheader label="Manual" sort="auto" align="center" />
+                                        <listheader label="Offset" sort="auto" align="center" />
+                                    </listhead>
+                                </listbox>
+                            </vlayout>
+                        </tabpanel>
+                        <tabpanel hflex="true">
+                            <vlayout hflex="true" vflex="true">
+                                <listbox id="lbxJobs" hflex="true" vflex="true" emptyMessage="No jobs found.">
+                                    <listhead>
+                                        <listheader width="60px" label="Active" sort="auto" align="center" />
+                                        <listheader id="lhdRegular" sort="auto" align="center" />
+                                        <listheader id="lhdJobDate" label="Execution" align="center" />
+                                        <listheader label="Temperature" sort="auto" align="center" />
+                                    </listhead>
+                                </listbox>
+                                <hlayout hflex="true">
+                                    <hbox hflex="true" pack="begin">
+                                        <button id="btnAddJob" iconSclass="z-icon-plus" height="50px" width="100px" style="font-size: 30px;"/>
+                                    </hbox>
+                                    <hbox hflex="true" pack="center">
+                                        <button id="btnEditJob" iconSclass="z-icon-pencil" height="50px" width="100px" style="font-size: 30px;"/>
+                                    </hbox>
+                                    <hbox hflex="true" pack="end">
+                                        <button id="btnDeleteJob" iconSclass="z-icon-minus" height="50px" width="100px" style="font-size: 30px;"/>
+                                    </hbox>
+                                </hlayout>
+                            </vlayout>
+                        </tabpanel>
+                    </tabpanels>
+                </tabbox>
+            </vlayout>
+        </center>
+        <south>
+            <popup id="popMenu" height="240px" width="500px" style="background-color:#314D60">
+                <vlayout hflex="true" vflex="true" style="background-color:#314D60">
+                    <button label="Thermostats" id="btnThermostats" style="font-size: 50px;" height="100px" hflex="true" />
+                    <separator height="10px" />
+                    <button label="Logs" id="btnLogs" style="font-size: 50px;" height="100px" hflex="true" />
+                </vlayout>
+            </popup>
+        </south>
+    </borderlayout>
+</zk>

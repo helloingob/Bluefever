@@ -1,0 +1,23 @@
+<zk>
+    <window id="wndLog" width="1200px" height="1000px" mode="modal" maximizable="true" maximized="true" position="center,center" apply="com.helloingob.bluefever.LogController">
+        <borderlayout width="100%" height="100%">
+            <center border="none">
+                <vlayout hflex="true" vflex="true">
+                    <listbox id="lbxDebugLog" hflex="true" vflex="true" emptyMessage="No debug log lines found." />
+                    <listbox id="lbxErrorLog" hflex="true" vflex="true" emptyMessage="No error log lines found." />
+                </vlayout>
+            </center>
+            <south border="none">
+                <hlayout hflex="true">
+                    <hbox hflex="true" pack="begin">
+                        <button id="btnRefresh" iconSclass="z-icon-refresh" height="100px" width="100px" style="font-size: 30px;" />
+                    </hbox>
+                    <button id="btnClearError" iconSclass="z-icon-times" height="100px" width="100px" style="font-size: 30px;" />
+                    <hbox hflex="true" pack="end">
+                        <button id="btnOk" label="Ok" onClick="wndLog.detach();" height="100px" width="100px" style="font-size: 30px;" />
+                    </hbox>
+                </hlayout>
+            </south>
+        </borderlayout>
+    </window>
+</zk>

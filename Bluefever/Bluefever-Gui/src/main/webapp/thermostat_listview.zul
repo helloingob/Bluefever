@@ -1,0 +1,31 @@
+<zk>
+    <window id="wndThermostatListview" width="1200px" height="350px" mode="modal" position="center,center" apply="com.helloingob.bluefever.ThermostatListviewController">
+        <borderlayout width="100%" height="100%">
+            <center border="none">
+                <vlayout hflex="true" vflex="true">
+                    <listbox id="lbxThermostats" hflex="true" vflex="true" emptyMessage="No thermostats found.">
+                        <listhead>
+                            <listheader id="lshLastPolled" label="Last polled" align="center" />
+                            <listheader label="Name" align="center" />
+                            <listheader label="Address" align="center" />
+                            <listheader label="Firmware" align="center" />
+                            <listheader label="Software" align="center" />
+                            <listheader label="Manufacturer" align="center" />
+                            <listheader label="Devicename" align="center" />
+                        </listhead>
+                    </listbox>
+                    <hbox>
+                        <button id="btnAddThermostat" iconSclass="z-icon-plus" />
+                        <button id="btnEditThermostat" iconSclass="z-icon-pencil" />
+                        <button id="btnDeleteThermostat" iconSclass="z-icon-minus" />
+                    </hbox>
+                </vlayout>
+            </center>
+            <south border="none">
+                <hbox hflex="true" pack="end">
+                    <button label="Ok" onClick="wndThermostatListview.detach();" width="85px" />
+                </hbox>
+            </south>
+        </borderlayout>
+    </window>
+</zk>
